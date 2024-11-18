@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Informações JavaEE</title>
+        <link rel="stylesheet" type="text/css" href="resources/style/styles.css" />
+    </h:head>
+<body>
+    <header>
+        <h1>Java EE e Open Liberty</h1>
+        <p>Uma visão sobre plataformas modernas para desenvolvimento de aplicações Java.</p>
+    </header>
+    <main>
+        <section id="open-liberty">
+            <h2>Open Liberty</h2>
+            <p><strong>O que é o Open Liberty?</strong></p>
+            <p>Open Liberty é uma plataforma de execução open source para aplicativos Java, desenvolvida para ser leve, modular e otimizada para a nuvem. Construída pela IBM, oferece suporte a aplicações Java EE e MicroProfile.</p>
+            <ul>
+                <li><strong>Modularidade e Desempenho:</strong> Ative apenas os recursos necessários.</li>
+                <li><strong>Compatibilidade:</strong> Totalmente compatível com Java EE e MicroProfile.</li>
+                <li><strong>Integração com Kubernetes:</strong> Gestão facilitada com Open Liberty Operator.</li>
+            </ul>
+            <p><strong>Open Liberty Operator: Gerenciamento no Kubernetes</strong></p>
+            <p>O Open Liberty Operator é uma ferramenta essencial para quem implanta o Open Liberty em clusters Kubernetes, permitindo uma administração centralizada e operações avançadas de aplicativos, como:</p>
+            <ul>
+                <li>Coleta de logs, rastreamento e despejo de memória para análise de desempenho;</li>
+                <li>Atualizações automatizadas e gerenciamento de configurações, facilitando a adaptação de aplicações em execução;</li>
+                <li>Provisionamento de aplicativos Java em nuvem com suporte completo a práticas de DevOps e CI/CD (Integração e Entrega Contínua).</li>
+            </ul>
+        </section>
+
+        <section id="containers">
+            <h2>Containers e Java EE</h2>
+            <h3>Java EE Containers</h3>
+            <p>Java EE Containers gerenciam componentes como servlets e EJBs, oferecendo serviços como transações, segurança e escalabilidade.</p>
+            <ul>
+                <li><strong>Componentes:</strong> Web Container, EJB Container e Connector Container.</li>
+                <li><strong>Segurança:</strong> Autenticação e gerenciamento de transações integrados.</li>
+            </ul>
+            <h3>Java EE Containers: Características e Vantagens</h3>
+            <p>Java EE Containers são ambientes dedicados para a execução de aplicativos Java Enterprise Edition. Eles gerenciam componentes como servlets, EJBs e JSPs, e oferecem serviços padronizados, como transações automáticas, segurança, escalabilidade e gerenciamento de recursos. Funcionam como uma camada intermediária entre o aplicativo e o sistema operacional, recebendo, processando e respondendo às requisições dos clientes. Assim, o Java EE Container proporciona um ambiente seguro e escalável, ideal para aplicativos corporativos de alta demanda.</p>
+
+            <h2>Docker</h2>
+            <h3>Definição e Funções</h3>
+            <p>Docker é uma plataforma de conteinerização que facilita o desenvolvimento e a entrega de aplicações distribuídas. Ele cria contêineres que encapsulam um aplicativo com todas as suas dependências, para que possa ser executado em qualquer ambiente de TI, garantindo consistência e eficiência. A containerização permite que vários aplicativos sejam executados em ambientes diversos, sendo especialmente vantajoso para o desenvolvimento de aplicações nativas em nuvem e multicloud híbrida.</p>
+            <ul>
+                <li><strong>Containers Docker:</strong>Cada contêiner Docker é um pacote de software isolado com configurações e dependências necessárias para rodar um aplicativo. Através da API do Docker ou de sua interface de linha de comando (CLI), usuários podem gerenciar contêineres facilmente.</li>
+                <li><strong>Docker Compose:</strong>Para gerenciar múltiplos contêineres em um ambiente mais complexo, o Docker Compose simplifica o processo, permitindo a criação de ambientes configuráveis e a comunicação entre diferentes contêineres.</li>
+            </ul>
+            <p>Docker encapsula aplicativos e suas dependências em contêineres, garantindo execução consistente em diferentes ambientes.</p>
+            <p>Docker é amplamente adotado na arquitetura de microsserviços e no desenvolvimento moderno, integrando-se bem com ferramentas de orquestração, como Kubernetes.</p>
+        </section>
+        
+        <section id="jpa">
+            <h2>Classes no JPA</h2>
+            <h3>Mapped Superclass</h3>
+            <p>No JPA (Java Persistence API), uma Mapped Superclass permite que uma classe compartilhe atributos e mapeamentos de banco de dados com outras classes sem que ela própria crie uma tabela no banco. Essa classe é ideal para definir propriedades comuns que serão herdadas por outras entidades.</p>
+            <ul>
+                <li><strong>Vantagem</strong>Mapped Superclass ajuda a padronizar mapeamentos, reduzir redundância de código e facilita o gerenciamento de entidades com atributos comuns.</li>
+                <li><strong>Exemplo de Mapped Superclass</strong>Considere uma classe `Employee`, que define atributos como `nome`, `dataAdmissao` e `departamento`. Subclasses como `Manager` e `Operator` herdam esses atributos, mas `Employee` não gera uma tabela no banco de dados, servindo apenas como modelo para evitar duplicação de código.</li>
+            </ul>
+
+            <h3>Embeddable Class</h3>
+            <p>Embeddable Class permite a criação de componentes reutilizáveis dentro de uma entidade no JPA, transformando atributos de uma classe em colunas na tabela de outra entidade.</p>
+            <ul>
+                <li><strong>Utilidade:</strong>Embeddable Classes são vantajosas para padronizar atributos comuns (como endereço) em várias entidades sem criar tabelas separadas. Isso é útil, por exemplo, quando múltiplas entidades como `User`, `Cliente` e `Funcionario` precisam dos mesmos dados de endereço.</li>
+                <li><strong>Exemplo de Embeddable Class:</strong>Suponha que a classe `Endereco` tenha os campos `rua` e `numero`. Ao ser embutida na entidade `User`, ela não cria uma tabela separada, mas seus atributos aparecem como colunas da tabela `User`.</li>
+           </ul>
+                <p>Em resumo, o uso de `@Embeddable` e `@MappedSuperclass` no JPA permite a criação de estruturas de dados reutilizáveis e consistentes, facilitando o desenvolvimento e a manutenção de grandes sistemas com várias entidades.</p>
+        </section>
+
+        <section id="java-ee">
+            <h2>Java EE</h2>
+            <h3>Java Enterprise Edition</h3>
+            <p>Java EE (Java Platform, Enterprise Edition) é uma plataforma baseada em Java SE (Java Platform, Standard Edition), projetada para desenvolver e executar aplicações corporativas de larga escala, confiáveis, seguras e escaláveis. Esses aplicativos são multicamadas e resolvem problemas comuns em ambientes corporativos, mas também são úteis para pequenas organizações e desenvolvedores individuais.</p>
+            
+            <h3>Desenvolvimento e Histórico</h3>
+            <p>Desenvolvido através do Java Community Process (JCP) desde 1998, Java EE evolui por meio de JSRs (Java Specification Requests), com contribuições de empresas como Oracle, Red Hat e IBM. Desde 2018, a plataforma foi renomeada para Jakarta EE após ser transferida para a Eclipse Foundation.</p>
+       
+            <h3>Conceito de Servidor e Contêineres</h3>
+            <p>Java EE é um conjunto de especificações implementadas por servidores de aplicativos (e.g., GlassFish, WildFly). Os contêineres desses servidores fornecem funcionalidades essenciais aos componentes, como suporte a APIs padronizadas e serviços independentes da plataforma.</p>
+            <p>Java EE é uma plataforma para desenvolvimento de aplicativos corporativos escaláveis, confiáveis e seguros.</p>
+
+            <h3>Histórico de Versões</h3>
+            <ul>
+                <li>J2EE 1.2 (1999)</li>
+                <li>J2EE 1.3 (2001)</li>
+                <li>Java EE 8 (2017)</li>
+                <li>Jakarta EE 8 (2019)</li>
+            </ul>
+            <h3>Arquitetura</h3>
+            <p>Os aplicativos Java EE possuem uma arquitetura multinível com:</p>
+            <ul>
+                <li><strong>Camada Cliente:</strong>Interface que solicita e recebe dados (navegadores, apps móveis, etc.)</li>
+                <li><strong>Camada Web:</strong>Responsável por intermediar cliente e lógica de negócios (JSF, JSP, Servlets, etc.).</li>
+                <li><strong>Camada Lógica de Negócios:</strong>Contém a funcionalidade central do sistema (EJB, JAX-RS, etc.).</li>
+                <li><strong>Camada de Dados:</strong>Conecta sistemas externos como bancos de dados e ERPs (JDBC, JPA, etc.).</li>
+            </ul>
+            <p>Utiliza servidores de aplicativos (Java EE Servers) que hospedam componentes em contêineres, oferecendo serviços como transações, segurança e escalabilidade.</p>
+
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Java EE e Open Liberty - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
